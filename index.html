@@ -318,6 +318,207 @@
             font-weight: bold;
         }
 
+        /* NUEVOS ESTILOS PARA EL CARRITO */
+        .cart-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 4rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+
+        .cart-section.active {
+            display: block;
+        }
+
+        .cart-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cart-header h2 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cart-items {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cart-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-item:hover {
+            transform: translateX(5px);
+        }
+
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cart-item-icon {
+            font-size: 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-item-details h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f5f5f5;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+        }
+
+        .quantity-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #5a67d8;
+        }
+
+        .quantity-display {
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .remove-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cart-summary {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .cart-total {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .cart-total-price {
+            color: #ff6b6b;
+        }
+
+        .checkout-btn {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 201, 196, 0.4);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .empty-cart-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-cart h3 {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .continue-shopping {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .continue-shopping:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -329,6 +530,16 @@
             
             .hero p {
                 font-size: 1.1rem;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .cart-item-actions {
+                justify-content: center;
             }
         }
     </style>
@@ -342,7 +553,7 @@
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#vender">Vender</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
+                <li><a href="#" class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -353,6 +564,20 @@
                 <h1>¡Encuentra tu Gorra Perfecta!</h1>
                 <p>Compra y vende gorras de las mejores marcas con total confianza</p>
                 <a href="#productos" class="cta-button">Ver Productos</a>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN DEL CARRITO -->
+        <section id="carrito" class="cart-section">
+            <div class="container">
+                <div class="cart-header">
+                    <h2>🛒 Tu Carrito de Compras</h2>
+                    <p style="color: #666;">Revisa los productos que has seleccionado</p>
+                </div>
+
+                <div id="cart-content">
+                    <!-- El contenido se genera dinámicamente con JavaScript -->
+                </div>
             </div>
         </section>
 
@@ -389,7 +614,7 @@
                             <h3>Gorra Deportiva Nike</h3>
                             <p>Gorra deportiva original Nike, perfecta para entrenar</p>
                             <div class="product-price">$850 MXN</div>
-                            <button class="buy-button" onclick="addToCart('Nike Deportiva', 850)">Agregar al Carrito</button>
+                            <button class="buy-button" onclick="addToCart('Nike Deportiva', 850, '🧢')">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -398,7 +623,7 @@
                             <h3>Gorra New Era Yankees</h3>
                             <p>Clásica gorra de los Yankees, edición limitada</p>
                             <div class="product-price">$1,200 MXN</div>
-                            <button class="buy-button" onclick="addToCart('New Era Yankees', 1200)">Agregar al Carrito</button>
+                            <button class="buy-button" onclick="addToCart('New Era Yankees', 1200, '👑')">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -407,7 +632,7 @@
                             <h3>Gorra Personalizada</h3>
                             <p>Diseña tu propia gorra con bordado personalizado</p>
                             <div class="product-price">$650 MXN</div>
-                            <button class="buy-button" onclick="addToCart('Personalizada', 650)">Agregar al Carrito</button>
+                            <button class="buy-button" onclick="addToCart('Personalizada', 650, '🎨')">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -416,7 +641,7 @@
                             <h3>Gorra Trucker Vintage</h3>
                             <p>Estilo retro con malla trasera, muy cómoda</p>
                             <div class="product-price">$450 MXN</div>
-                            <button class="buy-button" onclick="addToCart('Trucker Vintage', 450)">Agregar al Carrito</button>
+                            <button class="buy-button" onclick="addToCart('Trucker Vintage', 450, '🌟')">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -425,7 +650,7 @@
                             <h3>Gorra Snapback</h3>
                             <p>Gorra snapback con visera plana, estilo urbano</p>
                             <div class="product-price">$750 MXN</div>
-                            <button class="buy-button" onclick="addToCart('Snapback', 750)">Agregar al Carrito</button>
+                            <button class="buy-button" onclick="addToCart('Snapback', 750, '⚡')">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -434,7 +659,7 @@
                             <h3>Gorra Adidas Original</h3>
                             <p>Gorra Adidas clásica con las tres rayas icónicas</p>
                             <div class="product-price">$900 MXN</div>
-                            <button class="buy-button" onclick="addToCart('Adidas Original', 900)">Agregar al Carrito</button>
+                            <button class="buy-button" onclick="addToCart('Adidas Original', 900, '🏆')">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
@@ -496,10 +721,25 @@
         let cart = [];
         let cartCount = 0;
 
-        function addToCart(productName, price) {
-            cart.push({name: productName, price: price});
+        // FUNCIÓN MODIFICADA PARA INCLUIR ICONO
+        function addToCart(productName, price, icon = '🧢') {
+            // Buscar si el producto ya existe en el carrito
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: productName, 
+                    price: price, 
+                    icon: icon,
+                    quantity: 1,
+                    id: Date.now() // ID único para identificar el item
+                });
+            }
+            
             cartCount++;
-            document.querySelector('.cart-count').textContent = cartCount;
+            updateCartDisplay();
             
             // Animación de éxito
             const button = event.target;
@@ -513,6 +753,125 @@
             }, 2000);
             
             showNotification(`${productName} agregada al carrito`);
+        }
+
+        // NUEVA FUNCIÓN PARA MOSTRAR/OCULTAR CARRITO
+        function toggleCart() {
+            const cartSection = document.getElementById('carrito');
+            const otherSections = document.querySelectorAll('main > section:not(#carrito)');
+            
+            if (cartSection.classList.contains('active')) {
+                // Ocultar carrito y mostrar otras secciones
+                cartSection.classList.remove('active');
+                otherSections.forEach(section => section.style.display = 'block');
+            } else {
+                // Mostrar carrito y ocultar otras secciones
+                cartSection.classList.add('active');
+                otherSections.forEach(section => section.style.display = 'none');
+                renderCart();
+            }
+        }
+
+        // NUEVA FUNCIÓN PARA RENDERIZAR EL CARRITO
+        function renderCart() {
+            const cartContent = document.getElementById('cart-content');
+            
+            if (cart.length === 0) {
+                cartContent.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <h3>Tu carrito está vacío</h3>
+                        <p style="color: #666; margin-bottom: 2rem;">¡Agrega algunos productos increíbles!</p>
+                        <a href="#" class="continue-shopping" onclick="toggleCart()">Continuar Comprando</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const cartItemsHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <div class="cart-item-icon">${item.icon}</div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <div class="cart-item-price">$${item.price.toLocaleString()} MXN</div>
+                        </div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
+                            <span class="quantity-display">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart(${item.id})">Eliminar</button>
+                    </div>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            cartContent.innerHTML = `
+                <div class="cart-items">
+                    ${cartItemsHTML}
+                </div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        Total: <span class="cart-total-price">$${total.toLocaleString()} MXN</span>
+                    </div>
+                    <p style="color: #666; margin-bottom: 1rem;">${totalItems} producto${totalItems !== 1 ? 's' : ''} en tu carrito</p>
+                    <button class="checkout-btn" onclick="checkout()">Proceder al Pago 🚀</button>
+                    <br><br>
+                    <a href="#" class="continue-shopping" onclick="toggleCart()" style="font-size: 0.9rem;">← Continuar Comprando</a>
+                </div>
+            `;
+        }
+
+        // NUEVA FUNCIÓN PARA CAMBIAR CANTIDAD
+        function changeQuantity(itemId, change) {
+            const item = cart.find(item => item.id === itemId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(itemId);
+                    return;
+                }
+                updateCartDisplay();
+                renderCart();
+            }
+        }
+
+        // NUEVA FUNCIÓN PARA ELIMINAR DEL CARRITO
+        function removeFromCart(itemId) {
+            const itemIndex = cart.findIndex(item => item.id === itemId);
+            if (itemIndex > -1) {
+                const removedItem = cart[itemIndex];
+                cartCount -= removedItem.quantity;
+                cart.splice(itemIndex, 1);
+                updateCartDisplay();
+                renderCart();
+                showNotification(`${removedItem.name} eliminada del carrito`);
+            }
+        }
+
+        // NUEVA FUNCIÓN PARA ACTUALIZAR DISPLAY DEL CARRITO
+        function updateCartDisplay() {
+            cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = cartCount;
+        }
+
+        // NUEVA FUNCIÓN PARA CHECKOUT
+        function checkout() {
+            if (cart.length === 0) return;
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            showNotification(`¡Compra realizada por ${total.toLocaleString()} MXN! Gracias por tu compra 🎉`);
+            
+            // Limpiar carrito
+            cart = [];
+            cartCount = 0;
+            updateCartDisplay();
+            renderCart();
         }
 
         function showNotification(message) {
@@ -602,6 +961,3 @@
             }
         `;
         document.head.appendChild(style);
-    </script>
-</body>
-</html>
