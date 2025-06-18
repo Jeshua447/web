@@ -101,14 +101,7 @@ function renderCart() {
     }
 
     const cartItemsHTML = cart.map(item => `
-        <div class="cart-item">
-            <div class="cart-item-info">
-                <div class="cart-item-icon">${item.icon}</div>
-                <div class="cart-item-details">
-                   
-                    <div class="cart-item-price">$${item.price.toLocaleString()}${CURRENCY_SYMBOL}</div>
-                </div>
-            </div>
+    
             <div class="cart-item-actions">
                 <div class="quantity-controls">
                     <button class="quantity-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
