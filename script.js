@@ -9,6 +9,23 @@ function updateCartDisplay() {
     document.querySelector('.cart-count').textContent = totalItemsInCart;
 }
     updateCartDisplay(); // Actualiza el número en el icono del carrito
+// Agrega un producto al carrito
+function addToCart(productName, price, icon, event) {
+    // Busca si el producto ya existe en el carrito
+    const existingItem = cart.find(item => item.name === productName);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id: Date.now(), // ID único simple para cada artículo (para el cliente)
+            name: productName,
+            price: price,
+            icon: icon,
+            quantity: 1
+        });
+    }
+
 
     // Animación para el botón "Agregar al Carrito"
     const button = event.target;
