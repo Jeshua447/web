@@ -8,7 +8,7 @@ function updateCartDisplay() {
     const totalItemsInCart = cart.reduce((sum, item) => sum + item.quantity, 0);
     document.querySelector('.cart-count').textContent = totalItemsInCart;
 }
-    updateCartDisplay(); // Actualiza el número en el icono del carrito
+
 // Agrega un producto al carrito
 function addToCart(productName, price, icon, event) {
     // Busca si el producto ya existe en el carrito
@@ -26,6 +26,7 @@ function addToCart(productName, price, icon, event) {
         });
     }
 
+    updateCartDisplay(); // Actualiza el número en el icono del carrito
 
     // Animación para el botón "Agregar al Carrito"
     const button = event.target;
@@ -100,7 +101,14 @@ function renderCart() {
     }
 
     const cartItemsHTML = cart.map(item => `
-    
+        <div class="cart-item">
+            <div class="cart-item-info">
+                <div class="cart-item-icon">${item.icon}</div>
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                    <div class="cart-item-price">$${item.price.toLocaleString()}${CURRENCY_SYMBOL}</div>
+                </div>
+            </div>
             <div class="cart-item-actions">
                 <div class="quantity-controls">
                     <button class="quantity-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
