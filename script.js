@@ -105,7 +105,7 @@ function renderCart() {
             <div class="cart-item-info">
                 <div class="cart-item-icon">${item.icon}</div>
                 <div class="cart-item-details">
-                    <h4>${item.name}</h4>
+                   
                     <div class="cart-item-price">$${item.price.toLocaleString()}${CURRENCY_SYMBOL}</div>
                 </div>
             </div>
