@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapStore - Tu tienda de gorras definitiva</title>
-    <link rel="icon" type="image/png" href="img/favicon.png"> <style>
+    <title>CapStore - Compra y Venta de Gorras</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -545,121 +545,123 @@
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <h1 class="logo"><a href="#">CapStore 🧢</a></h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#caracteristicas">Características</a></li>
-                    <li><a href="#vender">Vender</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="cart-icon" onclick="toggleCart()">
-                🛒
-                <span class="cart-count">0</span>
-            </div>
-        </div>
+    <header>
+        <nav class="container">
+            <div class="logo">🧢 CapStore</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#vender">Vender</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section id="inicio" class="hero-section">
-            <div class="hero-content">
-                <h2>Encuentra la gorra perfecta para tu estilo</h2>
-                <p>Miles de diseños, las mejores marcas, envío rápido.</p>
-                <a href="#productos" class="button primary-button">Explorar Gorras</a>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>¡Encuentra tu Gorra Perfecta!</h1>
+                <p>Compra y vende gorras de las mejores marcas con total confianza</p>
+                <a href="#productos" class="cta-button">Ver Productos</a>
             </div>
         </section>
 
-        <section id="productos" class="products-section">
+        <!-- NUEVA SECCIÓN DEL CARRITO -->
+        <section id="carrito" class="cart-section">
             <div class="container">
-                <h2>Nuestras Gorras Destacadas</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="img/depo.jpg"
-                             srcset="img/depo-small.jpg 480w, img/depo-medium.jpg 800w, img/depo.jpg 1200w"
-                             sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px"
-                             alt="Gorra Deportiva Nike" loading="lazy" class="product-card-image">
-                        <div class="product-info">
-                            <h3>Nike Deportiva</h3>
-                            <p class="price">$850 MXN</p>
-                            <p class="description">Ideal para running o un look casual.</p>
-                            <button class="button buy-button" data-name="Nike Deportiva" data-price="850" data-icon="🧢">Agregar al Carrito</button>
-                        </div>
-                    </div>
+                <div class="cart-header">
+                    <h2>🛒 Tu Carrito de Compras</h2>
+                    <p style="color: #666;">Revisa los productos que has seleccionado</p>
+                </div>
 
-                    <div class="product-card">
-                        <img src="img/classic.jpg"
-                             srcset="img/classic-small.jpg 480w, img/classic-medium.jpg 800w, img/classic.jpg 1200w"
-                             sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px"
-                             alt="Gorra Clásica Adidas" loading="lazy" class="product-card-image">
-                        <div class="product-info">
-                            <h3>Adidas Clásica</h3>
-                            <p class="price">$700 MXN</p>
-                            <p class="description">Un diseño atemporal para cualquier ocasión.</p>
-                            <button class="button buy-button" data-name="Adidas Clásica" data-price="700" data-icon="🎩">Agregar al Carrito</button>
-                        </div>
-                    </div>
+                <div id="cart-content">
+                    <!-- El contenido se genera dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
 
-                    <div class="product-card">
-                        <img src="img/style.jpg"
-                             srcset="img/style-small.jpg 480w, img/style-medium.jpg 800w, img/style.jpg 1200w"
-                             sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px"
-                             alt="Gorra de Estilo Urbano" loading="lazy" class="product-card-image">
-                        <div class="product-info">
-                            <h3>Estilo Urbano</h3>
-                            <p class="price">$950 MXN</p>
-                            <p class="description">Perfecta para destacar en la ciudad.</p>
-                            <button class="button buy-button" data-name="Estilo Urbano" data-price="950" data-icon="👑">Agregar al Carrito</button>
-                        </div>
+        <section class="features">
+            <div class="container">
+                <h2 style="text-align: center; color: #333; margin-bottom: 2rem;">¿Por qué elegirnos?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Envío Gratis</h3>
+                        <p>Envío gratuito en compras mayores a $500 MXN</p>
                     </div>
-
-                    <div class="product-card">
-                        <img src="img/urbana.jpg"
-                             srcset="img/urbana-small.jpg 480w, img/urbana-medium.jpg 800w, img/urbana.jpg 1200w"
-                             sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px"
-                             alt="Gorra Negra Minimalista" loading="lazy" class="product-card-image">
-                        <div class="product-info">
-                            <h3>Negra Minimalista</h3>
-                            <p class="price">$600 MXN</p>
-                            <p class="description">Elegancia y sencillez en un solo accesorio.</p>
-                            <button class="button buy-button" data-name="Negra Minimalista" data-price="600" data-icon="⚫">Agregar al Carrito</button>
-                        </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Compra Segura</h3>
+                        <p>Todas las transacciones están protegidas y garantizadas</p>
                     </div>
-
-                    <div class="product-card">
-                        <img src="img/vintage.jpg"
-                             srcset="img/vintage-small.jpg 480w, img/vintage-medium.jpg 800w, img/vintage.jpg 1200w"
-                             sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px"
-                             alt="Gorra Retro Vintage" loading="lazy" class="product-card-image">
-                        <div class="product-info">
-                            <h3>Retro Vintage</h3>
-                            <p class="price">$1100 MXN</p>
-                            <p class="description">Un toque nostálgico para tu outfit.</p>
-                            <button class="button buy-button" data-name="Retro Vintage" data-price="1100" data-icon="💾">Agregar al Carrito</button>
-                        </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h3>Calidad Premium</h3>
+                        <p>Solo vendemos gorras originales y de alta calidad</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="caracteristicas" class="features-section">
+        <section id="productos" class="products">
             <div class="container">
-                <h2>¿Por qué elegir CapStore?</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <h3>Variedad Inigualable</h3>
-                        <p>Descubre una vasta colección de gorras de todas las marcas y estilos.</p>
+                <h2>Nuestros Productos</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image"><img src="img/depo.jpg" alt="Gorra Deportiva Nike" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0;"></div>
+                        <div class="product-info">
+                            <h3>Gorra Deportiva Nike</h3>
+                            <p>Gorra deportiva original Nike, perfecta para entrenar</p>
+                            <div class="product-price">$850 MXN</div>
+                            <button class="buy-button" onclick="addToCart('Nike Deportiva', 850, '🧢')">Agregar al Carrito</button>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <h3>Calidad Garantizada</h3>
-                        <p>Solo vendemos gorras auténticas y de la más alta calidad.</p>
+                    <div class="product-card">
+                        <div class="product-image"><img src="img/yanke.jpg" alt="Gorra New Era Yankees" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0;"></div>
+                        <div class="product-info">
+                            <h3>Gorra New Era Yankees</h3>
+                            <p>Clásica gorra de los Yankees, edición limitada</p>
+                            <div class="product-price">$1,200 MXN</div>
+                            <button class="buy-button" onclick="addToCart('New Era Yankees', 1200, '👑')">Agregar al Carrito</button>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <h3>Envío Rápido y Seguro</h3>
-                        <p>Recibe tus gorras en la puerta de tu casa en tiempo récord.</p>
+                    <div class="product-card">
+                        <div class="product-image"><img src="img/perso.jpg" alt="Gorra Personalizada" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0;"></div>
+                        <div class="product-info">
+                            <h3>Gorra Personalizada</h3>
+                            <p>Diseña tu propia gorra con bordado personalizado</p>
+                            <div class="product-price">$650 MXN</div>
+                            <button class="buy-button" onclick="addToCart('Personalizada', 650, '🎨')">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"><img src="img/vintage.jpg" alt="Gorra Trucker Vintage" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0;"></div>
+                        <div class="product-info">
+                            <h3>Gorra Trucker Vintage</h3>
+                            <p>Estilo retro con malla trasera, muy cómoda</p>
+                            <div class="product-price">$450 MXN</div>
+                            <button class="buy-button" onclick="addToCart('Trucker Vintage', 450, '🌟')">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"><img src="img/spa.jpg" alt=">Gorra Snapback" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0;"></div>
+                        <div class="product-info"></div>
+                        <div class="product-info">
+                            <h3>Gorra Snapback</h3>
+                            <p>Gorra snapback con visera plana, estilo urbano</p>
+                            <div class="product-price">$750 MXN</div>
+                            <button class="buy-button" onclick="addToCart('Snapback', 750, '⚡')">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"><img src="img/adi.jpg" alt="Gorra Adidas Original" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0;"></div>
+                        <div class="product-info">
+                            <h3>Gorra Adidas Original</h3>
+                            <p>Gorra Adidas clásica con las tres rayas icónicas</p>
+                            <div class="product-price">$900 MXN</div>
+                            <button class="buy-button" onclick="addToCart('Adidas Original', 900, '🏆')">Agregar al Carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -667,59 +669,53 @@
 
         <section id="vender" class="sell-section">
             <div class="container">
-                <h2>¿Quieres vender tus gorras?</h2>
-                <p>Publica tus gorras de forma rápida y sencilla. ¡Únete a nuestra comunidad!</p>
-                <form id="sellForm" class="sell-form">
-                    <div class="form-group">
-                        <label for="productName">Nombre de la Gorra:</label>
-                        <input type="text" id="productName" name="productName" placeholder="Ej. Gorra Deportiva Nike" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productDesc">Descripción:</label>
-                        <textarea id="productDesc" name="productDesc" placeholder="Describe tu gorra..." rows="3" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="productPrice">Precio (MXN):</label>
-                        <input type="number" id="productPrice" name="productPrice" placeholder="Ej. 750" min="50" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productImage">URL de la Imagen:</label>
-                        <input type="url" id="productImage" name="productImage" placeholder="Ej. https://misitio.com/gorra.jpg" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productState">Estado:</label>
-                        <select id="productState" name="productState" required>
-                            <option value="">Selecciona un estado</option>
-                            <option value="nuevo">Nuevo</option>
-                            <option value="usado-excelente">Usado (Excelente)</option>
-                            <option value="usado-bueno">Usado (Bueno)</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="button primary-button">Publicar Gorra</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="carrito" class="cart-section">
-            <div class="container">
-                <h2>Tu Carrito de Compras</h2>
-                <div id="cart-content" class="cart-content">
-                    </div>
+                <h2 style="color: #333; margin-bottom: 2rem;">¿Quieres Vender tu Gorra?</h2>
+                <p style="color: #666; margin-bottom: 2rem;">Publica tu gorra y alcanza a miles de compradores potenciales</p>
+                
+                <div class="sell-form">
+                    <h3 style="margin-bottom: 1.5rem; color: #333;">Información del Producto</h3>
+                    <form id="sellForm">
+                        <div class="form-group">
+                            <label for="productName">Nombre del Producto</label>
+                            <input type="text" id="productName" name="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Marca</label>
+                            <input type="text" id="brand" name="brand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="condition">Estado</label>
+                            <select id="condition" name="condition" style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px;">
+                                <option value="nuevo">Nuevo</option>
+                                <option value="como-nuevo">Como Nuevo</option>
+                                <option value="usado">Usado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Precio (MXN)</label>
+                            <input type="number" id="price" name="price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Describe tu gorra..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Información de Contacto</label>
+                            <input type="text" id="contact" name="contact" placeholder="Teléfono o email" required>
+                        </div>
+                        <button type="submit" class="submit-button">Publicar Gorra</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
+    <footer id="contacto">
         <div class="container">
             <p>&copy; 2025 CapStore. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#"><img src="img/facebook.png" alt="Facebook" width="24" height="24"></a>
-                <a href="#"><img src="img/twitter.png" alt="Twitter" width="24" height="24"></a>
-                <a href="#"><img src="img/instagram.png" alt="Instagram" width="24" height="24"></a>
-            </div>
+            <p>📧 contacto@capstore.mx | 📱 +52 55 1234-5678</p>
+            <p>🚚 Envíos a toda la República Mexicana</p>
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
-</body>
-</html>
+   <script src="scripts.js"></script>
