@@ -8,24 +8,6 @@ function updateCartDisplay() {
     const totalItemsInCart = cart.reduce((sum, item) => sum + item.quantity, 0);
     document.querySelector('.cart-count').textContent = totalItemsInCart;
 }
-
-// Agrega un producto al carrito
-function addToCart(productName, price, icon, event) {
-    // Busca si el producto ya existe en el carrito
-    const existingItem = cart.find(item => item.name === productName);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            id: Date.now(), // ID único simple para cada artículo (para el cliente)
-            name: productName,
-            price: price,
-            icon: icon,
-            quantity: 1
-        });
-    }
-
     updateCartDisplay(); // Actualiza el número en el icono del carrito
 
     // Animación para el botón "Agregar al Carrito"
